@@ -10,8 +10,10 @@ fn main() {
 
     let mut add_on: i32 = 0;
     if grades.len() > 1 {
-        for _i in 0..grades.len() - 1 {
-            add_on += 8;
+        for i in 0..grades.len() - 1 {
+            if grades[i] == "A" {
+                add_on += 8;
+            }
         }
     }
 
