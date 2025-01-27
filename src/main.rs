@@ -1,8 +1,10 @@
 use std::char;
 
+use text_io::read;
+
 fn main() {
     println!("Enter A level Grades in the format: XYZ");
-    let mut input: String = std::env::args().nth(1).unwrap().parse().unwrap();
+    let mut input: String = read!();
 
     input = input.to_uppercase();
 
@@ -11,7 +13,7 @@ fn main() {
     let mut add_on: i32 = 0;
     if grades.len() > 1 {
         for i in 0..grades.len() - 1 {
-            if grades[i] == "A" {
+            if grades[i].contains("A") {
                 add_on += 8;
             }
         }
